@@ -27172,13 +27172,19 @@ var _signupView = require("../signup-view/signup-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
+    const [movies, setMovies] = (0, _react.useState)([]);
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
-    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
-    (0, _react.useEffect)(()=>{
+    /* if (storedUser) {
+    try {
+      const parsedUser = JSON.parse(storedUser);
+    } else {
+      console.error("Something went wrong:", error);
+    }
+  }*/ (0, _react.useEffect)(()=>{
         if (!token) return;
         fetch("https://myflixx-by-kevin-holscher.onrender.com/movies", {
             headers: {
@@ -27220,13 +27226,13 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 57,
+                lineNumber: 66,
                 columnNumber: 9
             }, undefined),
             "or",
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signupView.SignupView), {}, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 64,
+                lineNumber: 73,
                 columnNumber: 9
             }, undefined)
         ]
@@ -27236,14 +27242,14 @@ const MainView = ()=>{
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 71,
+        lineNumber: 80,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 79,
+        lineNumber: 88,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27255,7 +27261,7 @@ const MainView = ()=>{
                     }
                 }, movie.Title, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 85,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, undefined)),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27267,17 +27273,17 @@ const MainView = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 93,
+                lineNumber: 102,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 83,
+        lineNumber: 92,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "4jJTMG3xreZI0yvy2upuQxogWcU=");
+_s(MainView, "EzXgk9K5AOxOfHC20n7Qrr22Qgc=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
