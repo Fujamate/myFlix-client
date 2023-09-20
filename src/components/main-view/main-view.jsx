@@ -2,15 +2,33 @@ import { useState, useEffect } from "react";
 
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-
+import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
   const [movies, setMovies] = useState([]);
-
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
-    fetch('https://myflixx-by-kevin-holscher.onrender.com/movies')
+    if (!token) {
+      return;
+    }
+
+    fetch("https://myflixx-by-kevin-holscher.onrender.com/movies", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => response.json())
+      .then((movies) => {
+        setMovies(movies);
+      });
+  }, [token]);
+
+  useEffect(() => {
+    fetch("https://myflixx-by-kevin-holscher.onrender.com/movies")
       .then((response) => response.json())
       .then((data) => {
         console.log("Movies from API: ", data);
@@ -21,21 +39,39 @@ export const MainView = () => {
             ImagePath: movie.ImagePath,
             Description: movie.Description,
             Genre: {
-              Name: movie.Genre.Name
+              Name: movie.Genre.Name,
             },
             Director: {
-              Name: movie.Director.Name
+              Name: movie.Director.Name,
             },
-            Featured: movie.Featured
+            Featured: movie.Featured,
           };
         });
         setMovies(moviesFromApi);
       });
   }, []);
 
+  if (!user) {
+    return (
+      <>
+        <LoginView
+          onLoggedIn={(user, token) => {
+            setUser(user);
+            setToken(token);
+          }}
+        />
+        or
+        <SignupView />
+      </>
+    );
+  }
+
   if (selectedMovie) {
     return (
-      <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
+      <MovieView
+        movie={selectedMovie}
+        onBackClick={() => setSelectedMovie(null)}
+      />
     );
   }
 
@@ -43,15 +79,10 @@ export const MainView = () => {
     return <div>The list is empty!</div>;
   }
 
-  
-
-  
-
-
   return (
     <div>
       {movies.map((movie) => (
-          <MovieCard
+        <MovieCard
           key={movie.Title}
           movie={movie}
           onMovieClick={(newSelectedMovie) => {
@@ -59,6 +90,15 @@ export const MainView = () => {
           }}
         />
       ))}
+      <button
+        onClick={() => {
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
+        }}
+      >
+        Logout
+      </button>
     </div>
   );
 };
