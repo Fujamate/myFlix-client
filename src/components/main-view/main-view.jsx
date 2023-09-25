@@ -7,37 +7,17 @@ import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
-  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedUser = JSON.parse(localStorage.getItem("user")) || null;
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
 
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  /* if (storedUser) {
-    try {
-      const parsedUser = JSON.parse(storedUser);
-    } else {
-      console.error("Something went wrong:", error);
-    }
-  }*/
-
   useEffect(() => {
-    if (!token) {
-      return;
-    }
-
     fetch("https://myflixx-by-kevin-holscher.onrender.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
-      .then((response) => response.json())
-      .then((movies) => {
-        setMovies(movies);
-      });
-  }, [token]);
-
-  useEffect(() => {
-    fetch("https://myflixx-by-kevin-holscher.onrender.com/movies")
       .then((response) => response.json())
       .then((data) => {
         console.log("Movies from API: ", data);
@@ -58,7 +38,7 @@ export const MainView = () => {
         });
         setMovies(moviesFromApi);
       });
-  }, []);
+  }, [token]);
 
   if (!user) {
     return (
