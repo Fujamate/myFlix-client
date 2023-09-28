@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 
+import "./main-view.css";
+
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
+import { Button, Row, Col } from "react-bootstrap";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
@@ -42,25 +45,31 @@ export const MainView = () => {
 
   if (!user) {
     return (
-      <>
-        <LoginView
-          onLoggedIn={(user, token) => {
-            setUser(user);
-            setToken(token);
-          }}
-        />
-        or
-        <SignupView />
-      </>
+      <Row className="justify-content-md-center">
+        <Col md={5}>
+          <LoginView
+            onLoggedIn={(user, token) => {
+              setUser(user);
+              setToken(token);
+            }}
+          />
+          or
+          <SignupView />
+        </Col>
+      </Row>
     );
   }
 
   if (selectedMovie) {
     return (
-      <MovieView
-        movie={selectedMovie}
-        onBackClick={() => setSelectedMovie(null)}
-      />
+      <Row className="justify-content-md-center">
+        <Col md={8}>
+          <MovieView
+            movie={selectedMovie}
+            onBackClick={() => setSelectedMovie(null)}
+          />
+        </Col>
+      </Row>
     );
   }
 
@@ -70,16 +79,20 @@ export const MainView = () => {
 
   return (
     <div>
-      {movies.map((movie) => (
-        <MovieCard
-          key={movie.Title}
-          movie={movie}
-          onMovieClick={(newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-      ))}
-      <button
+      <Row sm={1} md={2} lg={3} xl={4}>
+        {movies.map((movie) => (
+          <Col key={movie.Title}>
+            <MovieCard
+              movie={movie}
+              onMovieClick={(newSelectedMovie) => {
+                setSelectedMovie(newSelectedMovie);
+              }}
+            />
+          </Col>
+        ))}
+      </Row>
+      <Button
+        className="mt-2"
         onClick={() => {
           setUser(null);
           setToken(null);
@@ -87,7 +100,7 @@ export const MainView = () => {
         }}
       >
         Logout
-      </button>
+      </Button>
     </div>
   );
 };
