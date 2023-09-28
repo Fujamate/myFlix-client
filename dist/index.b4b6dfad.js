@@ -27335,7 +27335,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-bootstrap":"3AD9A","./main-view.css":"lTMRU"}],"bwuIu":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","./main-view.css":"lTMRU","react-bootstrap":"3AD9A"}],"bwuIu":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27412,7 +27412,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","prop-types":"7wKI2","react-bootstrap":"3AD9A","./movie-card.css":"dezC3"}],"bqg7t":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","prop-types":"7wKI2","./movie-card.css":"dezC3","react-bootstrap":"3AD9A"}],"bqg7t":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -28327,7 +28327,7 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"3AD9A":[function(require,module,exports) {
+},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"dezC3":[function() {},{}],"3AD9A":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Accordion", ()=>(0, _accordionDefault.default));
@@ -40954,7 +40954,7 @@ exports.default = Object.assign(ToggleButtonGroup, {
     Button: (0, _toggleButtonDefault.default)
 });
 
-},{"react":"21dqq","invariant":"d1QgR","uncontrollable":"b3yWY","./createChainedFunction":"1KNLM","./ElementChildren":"fdyAp","./ButtonGroup":"gXYCe","./ToggleButton":"dCmeV","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t"}],"dezC3":[function() {},{}],"ggaUx":[function(require,module,exports) {
+},{"react":"21dqq","invariant":"d1QgR","uncontrollable":"b3yWY","./createChainedFunction":"1KNLM","./ElementChildren":"fdyAp","./ButtonGroup":"gXYCe","./ToggleButton":"dCmeV","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t"}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41056,7 +41056,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","prop-types":"7wKI2","react-bootstrap":"3AD9A","./movie-view.css":"bqsfb"}],"bqsfb":[function() {},{}],"9YtA0":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","prop-types":"7wKI2","./movie-view.css":"bqsfb","react-bootstrap":"3AD9A"}],"bqsfb":[function() {},{}],"9YtA0":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41184,7 +41184,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","react-bootstrap":"3AD9A","./login-view.css":"hGAfz"}],"hGAfz":[function() {},{}],"4OGiN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","./login-view.css":"hGAfz","react-bootstrap":"3AD9A"}],"hGAfz":[function() {},{}],"4OGiN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$73d1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41367,6 +41367,6 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","react-bootstrap":"3AD9A","./signup-view.css":"350To"}],"350To":[function() {},{}],"lTMRU":[function() {},{}],"lJZlQ":[function() {},{}]},["3GK8W","izUgn","d8Dch"], "d8Dch", "parcelRequire0361")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"bqg7t","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6xcJ1","./signup-view.css":"350To","react-bootstrap":"3AD9A"}],"350To":[function() {},{}],"lTMRU":[function() {},{}],"lJZlQ":[function() {},{}]},["3GK8W","izUgn","d8Dch"], "d8Dch", "parcelRequire0361")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
