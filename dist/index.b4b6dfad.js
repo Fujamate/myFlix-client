@@ -27316,59 +27316,7 @@ const MainView = ()=>{
         lineNumber: 47,
         columnNumber: 5
     }, undefined);
-}; /* <Col md={5}>
-            <LoginView
-              onLoggedIn={(user, token) => {
-                setUser(user);
-                setToken(token);
-              }}
-            />
-            or
-            <SignupView />
-          </Col> */  /* 
-  if (selectedMovie) {
-    return (
-      <Row className="justify-content-md-center">
-        <Col md={8}>
-          <MovieView
-            movie={selectedMovie}
-            onBackClick={() => setSelectedMovie(null)}
-          />
-        </Col>
-      </Row>
-    );
-  }
-
-  if (movies.length === 0) {
-    return <div>The list is empty!</div>;
-  }
-
-  return (
-    <div>
-      <Row sm={1} md={2} lg={3} xl={4}>
-        {movies.map((movie) => (
-          <Col key={movie.Title}>
-            <MovieCard
-              movie={movie}
-              onMovieClick={(newSelectedMovie) => {
-                setSelectedMovie(newSelectedMovie);
-              }}
-            />
-          </Col>
-        ))}
-      </Row>
-      <Button
-        className="mt-2"
-        onClick={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
-      >
-        Logout
-      </Button>
-    </div>
-  ); */ 
+};
 _s(MainView, "uNI/czge+RvnQXHBmRWDX5P99DE=");
 _c = MainView;
 var _c;
