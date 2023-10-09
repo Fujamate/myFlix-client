@@ -4,6 +4,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+import { ProfileView } from "../profile-view/profile-view";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -27,7 +28,7 @@ export const MainView = () => {
         console.log("Movies from API: ", data);
         const moviesFromApi = data.map((movie) => {
           return {
-            _id: movie.id,
+            _id: movie._id,
             Title: movie.Title,
             ImagePath: movie.ImagePath,
             Description: movie.Description,
@@ -113,12 +114,39 @@ export const MainView = () => {
                   <Col>The List is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
-                      <Col className="my-2" key={movie._id} md={3}>
-                        <MovieCard movie={movie} />
-                      </Col>
-                    ))}
+                    {movies.map((movie) => {
+                      console.log("Movie _id:", movie._id);
+                      return (
+                        <Col className="my-2" key={movie._id} md={3}>
+                          <MovieCard
+                            movie={movie}
+                            token={token}
+                            setUser={setUser}
+                            user={user}
+                          />
+                        </Col>
+                      );
+                    })}
                   </>
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <>
+                {!user ? (
+                  <Navigate to="/login" replace />
+                ) : (
+                  <Col md={5}>
+                    <ProfileView
+                      user={user}
+                      token={token}
+                      setUser={setUser}
+                      movies={movies}
+                    />
+                  </Col>
                 )}
               </>
             }
